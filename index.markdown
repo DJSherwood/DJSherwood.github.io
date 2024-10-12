@@ -3,5 +3,4 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 --- 
-[About] (./about.html)
-[Blog] (./blog.html)
+[About] (./about.html) [Blog] (./blog.html)
