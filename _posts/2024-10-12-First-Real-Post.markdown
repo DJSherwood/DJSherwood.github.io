@@ -29,4 +29,4 @@ with it a bit more and make it work.
 Finally, using github to develop a blog means that I will increase my github commit rate. I would love to show multiple commits
 per day to a prospective employer. Seems like a good goal to accomplish while tackling the other three. 
 
- thank (darn keyboard) you for reading!
+Thank you for reading!
