@@ -7,5 +7,5 @@ layout: default
 Read my posts on my [Blog](./blog.html).
 
 # Background
-Learn more [about](./about.html) my background and current interests.
+Learn more [about](./about.markdown) my background and current interests.
 
