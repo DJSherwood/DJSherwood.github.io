@@ -9,7 +9,7 @@ Welcome to my personal website! I'm still learning to use `Jekyll` so please bea
 a commenting system for the blog. 
 
 # Blog
-Feel free to read my [Blog!](./blog.html).
+Feel free to read my [Blog!](./blog.html)
 
 # Background
 Here is where you can learn more [about](./about.markdown) my background and current interests.
