@@ -27,7 +27,7 @@ In 2019, I moved back to San Antonio with my wife and I got a job as a Senior Fi
 that specialized in selling wound vac services. They were bought by **3M** in the fall of 2019. I mastered the art of creating 
 compelling dashboards with `Tableau` and experimented with `XGBoost`'s `accelerated-failure-time` objective function.
 I retained my job through the beginning of the pandemic but was ultimately laid off in 2021. I was then able to find work 
-with *EY* as a Senior Data Analyst. And that is where I am now!
+with **EY** as a Senior Data Analyst. And that is where I am now!
 
 # Current Interests
 I enjoy using the bayesian approach to statistics. It feels very natural to define variables of interest with a prior distribution. 
