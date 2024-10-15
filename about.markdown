@@ -7,7 +7,7 @@ title: About
 I feel that my career path has essentially been a randomwalk. I enjoyed studying calculus and science in high school, but 
 I did not feel drawn to a specific major when enrolling at **The University of Texas at San Antonio** in 2005.
 I chose Biology as my major and decided to pursue mathematics as a minor. In a remarkable twist of fate, 
-my biology professor received a grant to establish a student scholarship program. It's purpose was to encourage Biology students to work in 
+my biology professor received a grant to establish a student scholarship program. Its purpose was to encourage Biology students to work in 
 computational labs and mathematics students to work in biological labs as student researchers. This seemed like a perfect opportunity for me. 
 The stipend wasn't quite enough for me to live on my own, but by living at home I could pay for all of my university related costs. 
 
