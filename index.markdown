@@ -3,9 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: default
 --- 
+
+# Welcome!
+Welcome to my personal website! I'm still learning to use `Jekyll` so please bear with me. In the future, I hope to have 
+a commenting system for the blog. 
+
 # Blog
-Read my posts on my [Blog](./blog.html).
+Feel free to read my [Blog!](./blog.html).
 
 # Background
-Learn more [about](./about.markdown) my background and current interests.
+Here is where you can learn more [about](./about.markdown) my background and current interests.
 
