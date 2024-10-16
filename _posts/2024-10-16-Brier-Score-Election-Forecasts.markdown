@@ -7,7 +7,7 @@ categories: python
 
 I find election forecasting both captivating and boring. On the one hand, I feel compelled to check _fivethirtyeight.com_ (headed by G Elliot Morris)
 or _The Silver Bulletin_ (headed by Nate Silver) every day to see how the percentage of winning has changed for each candidate. And then I see that usually, the estimation 
-for both candidates has moved by a few tenths of a point. **How disappointing**. But I _also_ have noticed that Morris and Silver
+for both candidates has moved by a few tenths of a point. _How disappointing_. But I _also_ noticed that Morris and Silver
 _differ_ in their predictions. Wouldn't it be neat to evaluate their forecasts before the election even occurs?
 
 Well, it turns out we can! By calculating a `Brier Score` for both forecasts, for both candidates, we can see which has more
@@ -64,8 +64,14 @@ print(f"Morris' Brier Score Loss for Harris is: {morris_harris_bsl}")
 ```
 The output is this: 
 
+|        | Trump Wins | Harris Wins |
+|:-------|:-----------|:------------|
+| Silver | 0.310      | 0.309       |
+| Morris | 0.312      | 0.292       |
 
-Which essentially shows that Nate Silver's forecast is better that Morris' forecast if former President Trump is re-elected. 
-It also suggests that Morris' forecast is slightly better if Vice-President Harris wins. This is especially interesting because
-Morris essentially took over Nate Silver's job at fivethirtyeight.com. They've tangled a bit in the past, so you have to 
-wonder if their criticisms of each other's modeling approaches are valid or just enmity.  We'll find out soon, in a month!
+The smaller the score, the better. Essentially, this table shows that Nate Silver's forecast is better that Morris' 
+forecast if former President Trump is re-elected. It also suggests that Morris' forecast is slightly better if Vice-President Harris 
+wins. A closer look shows that Silver's scores are almost identical for each candidate, while Morris' are slightly more 
+unbalanced. This is interesting to me because Morris essentially took over Nate Silver's job at fivethirtyeight.com. 
+They've tangled a bit in the past, so you have to wonder if their criticisms of each other's modeling approaches are 
+valid or just enmity.  We'll find out soon, in a month!
