@@ -4,8 +4,9 @@ title: "First Post"
 date: 2024-10-12 18:36:00 -0500
 categories: random-thoughts
 ---
-This blog is an experiment in many ways, that is, I have a variety of goals to accomplish through it. Here they are: 
+This blog is an experiment, with many goals...
 
+Here they are: 
 1. Develop my thoughts in more detail for things I already understand
 2. Enhance my knowledge of things I do not yet understand (like `Jekyll` and static-web programming, lol)
 3. Work-out the kinks for my custom keyboard layout
