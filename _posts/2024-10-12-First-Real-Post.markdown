@@ -13,9 +13,9 @@ Here they are:
 4. Increase my github commit rate
 
 The truth of the matter is, I haven't written _creatively_ in a very long time. All most everything I write nowadays is 
-purely technical. I have not set my _thoughts_ down in ages. And I can feel that I am starting to lose something. Maybe it
-is the remote work, or lingering effects from the pandemic, or possibly old age...but I feel that I have _lost_ some _spark_ 
-of something. And so I am going to write about my thoughts and hopefully some neurons will reconnect in a familiar way again. 
+purely technical. And I'm not sure if it's because I'm maturing or what but I feel a real need to communicate my experiences 
+and what I've learned in life. Not that it matters -- with LLMs summarizing the entire internet and therefore, the majority 
+of human experience, my personal experiences count for very little :). Still, I hope you find them entertaining!
 
 The second purpose of this blog is to help me learn new things. I love the process of learning. But there is so much that 
 I want to learn! This blog will help me organize my thoughts and help me learn through developing explanations. Hopefully 
