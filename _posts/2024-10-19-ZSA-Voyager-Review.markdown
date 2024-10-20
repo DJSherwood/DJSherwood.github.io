@@ -20,7 +20,7 @@ It turns out there are many kinds of mechanical keyboards. My immediate consider
 I decided to focus on the layout first and go with a split/ergonomic mechanical keyboard. This greatly lowered the number of keyboards that met my search criteria. The top 3 that caught my attention were:
 
 1. The [Glove M80](https://www.moergo.com/collections/glove80-keyboards/products/glove80-split-ergonomic-keyboard-revision-2?variant=47282998739217)
-2. The [Advantage 360](https://www.moergo.com/collections/glove80-keyboards/products/glove80-split-ergonomic-keyboard-revision-2?variant=47282998739217)
+2. The [Advantage 360](https://kinesis-ergo.com/keyboards/advantage360/?srsltid=AfmBOoqzp_Ic_ksBmvYW3qU0vFnh3GauOqps7uXrCLe2a3fPSpnendzX)
 3. The [Voyager](https://www.zsa.io/voyager/buy)
 
 The _Glove M80_ seemed to be the most highly rated keyboard of the three. I read that users experienced a cessation of wrist pain after using the _Glove M80_. The drawback for me was that the keys were literally soldered to the board, meaning that the ability to change out individual keys-witches was lost. This was one of the primary reasons I wanted a mechanical keyboard.
