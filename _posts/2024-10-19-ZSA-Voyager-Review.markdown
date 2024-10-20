@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "You should buy a split, mechanical keyboard"
+title: "You Should Buy a Split, Mechanical Keyboard"
 date: 2024-10-19 21:15:00 -0500
 categories: review
 ---
