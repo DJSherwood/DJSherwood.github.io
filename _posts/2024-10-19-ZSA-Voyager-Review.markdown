@@ -12,10 +12,10 @@ It turns out there are many kinds of mechanical keyboards. My immediate consider
 
 1. Layout
 -  Conventional vs Split
-2. Keyswitches
--  Brown / Blue / Red / any other color you can think of
+2. Key-switches
+-  Brown / Blue / Red / any other color of the rainbow
 3. Aesthetics
-- How do you want your keyboard to look?
+- It should look nice
 
 I decided to focus on the layout first and go with a split/ergonomic mechanical keyboard. This greatly lowered the number of keyboards that met my search criteria. The top 3 that caught my attention were:
 
