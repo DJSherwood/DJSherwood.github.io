@@ -56,14 +56,8 @@ morris_trump_bsl = calc_brier_score(m["Trump"].to_numpy())
 morris_harris_bsl = calc_brier_score(m["Harris"].to_numpy())
 ```
 
-## 4. Print!
+## 4. Output!
 
-```python
-print(f"Silver's Brier Score Loss for Trump is: {silver_trump_bsl}")
-print(f"Silver's Brier Score Loss for Harris is: {silver_harris_bsl}")
-print(f"Morris' Brier Score Loss for Trump is: {morris_trump_bsl}")
-print(f"Morris' Brier Score Loss for Harris is: {morris_harris_bsl}")
-```
 The output is this: 
 
 |        | Trump Wins | Harris Wins |
