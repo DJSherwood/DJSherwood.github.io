@@ -74,4 +74,6 @@ valid or just enmity.  We'll find out soon, in a month!
 
 ## 5. Testing
 
+{::nomarkdown}
 $$ x = y^2 $$
+{:/} 
