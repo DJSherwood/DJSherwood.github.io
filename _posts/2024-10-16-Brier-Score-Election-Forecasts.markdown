@@ -71,3 +71,7 @@ wins. A closer look shows that Silver's scores are almost identical for each can
 unbalanced. This is interesting to me because Morris essentially took over Nate Silver's job at fivethirtyeight.com. 
 They've tangled a bit in the past, so you have to wonder if their criticisms of each other's modeling approaches are 
 valid or just enmity.  We'll find out soon, in a month!
+
+## 5. Testing
+
+$$ x = y^2 $$
