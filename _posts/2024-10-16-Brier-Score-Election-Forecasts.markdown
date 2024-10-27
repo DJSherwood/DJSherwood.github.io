@@ -13,13 +13,12 @@ Morris is newer to the game but has a decent track record; I'm not prepared to w
 Although both forecasters predict a Harris/Walz win, the magnitude of their predictions differ slightly. Which raises the question: could we evaluate my two favorite forecasters
 before the election even takes place?
 
-
 **It turns out** that we can! All we need to do is calculate the `Brier Score` for each candidate for both forecasts. I will not replicate the 
 [wikipedia entry](https://en.wikipedia.org/wiki/Brier_score), but I will say briefly that the score ranges between 1 and 0. 
 A score of 1 means that the forecast is 100% in the wrong direction, while a score of 0 means the forecast is 100% correct.
 The `Brier Score` is calculated by the following formula:
-$BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
 
+$BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
 
 Here's how to do it in Python:
 ## 1. Download Forecast
