@@ -5,14 +5,23 @@ date: 2024-10-16 08:15:00 -0500
 categories: python
 lead: "Have you ever wanted to evaluate your favorite election forecast?"
 ---
-Another election cycle is upon us. On the one hand, I feel compelled to check _fivethirtyeight.com_ (headed by G Elliot Morris)
-or _The Silver Bulletin_ (headed by Nate Silver) every day to see how the percentage of winning has changed for each candidate. And then I see that usually, the estimation 
-for both candidates has moved by a few tenths of a point. _How disappointing_. But I _also_ noticed that Morris and Silver
-_differ_ in their predictions. Wouldn't it be neat to evaluate their forecasts before the election even occurs?
+**Another election cycle** is upon us, and with it, prognositications from our favorite forecasters on who will win the Presidential Election.
+My personal favorite is **Nate Silver**, whose 2015 book _The Signal and the Noise_ influenced me greatly as I was learning statistics. 
+Nate now hosts his election forecasts on his substack _The Silver Bulletin_. 
+On the other hand, I am interested in G Elliot Morris, who took over fivethirtyeight.com after Nate's contract failed to renew with Disney. 
+Morris is newer to the game but has a decent track record; I'm not prepared to write him off just yet. 
+Although both forecasters predict a Harris/Walz win, the magnitude of their predictions differ slightly. Which raises the question: could we evaluate my two favorite forecasters
+before the election even takes place?
 
-Well, it turns out we can! By calculating a `Brier Score` for both forecasts, for both candidates, we can see which has more
-of a bias for each candidate. Here's how to do it in Python. 
 
+**It turns out** that we can! All we need to do is calculate the `Brier Score` for each candidate for both forecasts. I will not replicate the 
+[wikipedia entry](https://en.wikipedia.org/wiki/Brier_score), but I will say briefly that the score ranges between 1 and 0. 
+A score of 1 means that the forecast is 100% in the wrong direction, while a score of 0 means the forecast is 100% correct.
+The `Brier Score` is calculated by the following formula:
+$BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
+
+
+Here's how to do it in Python:
 ## 1. Download Forecast
 Nate Silver's _Bulletin_ is nice in that it provides a button to facilitate download. Unfortunately, _fivethirtyeight.com_ does not do that
 so you will have to get their data manually. 
@@ -55,7 +64,6 @@ morris_harris_bsl = calc_brier_score(m["Harris"].to_numpy())
 ```
 
 ## 4. Output!
-
 The output is this: 
 
 |        | Trump Wins | Harris Wins |
@@ -63,17 +71,11 @@ The output is this:
 | Silver | 0.310      | 0.309       |
 | Morris | 0.312      | 0.292       |
 
-The smaller the score, the better. Essentially, this table shows that Nate Silver's forecast is better that Morris' 
-forecast if former President Trump is re-elected. It also suggests that Morris' forecast is slightly better if Vice-President Harris 
-wins. A closer look shows that Silver's scores are almost identical for each candidate, while Morris' are slightly more 
-unbalanced. This is interesting to me because Morris essentially took over Nate Silver's job at fivethirtyeight.com. 
-They've tangled a bit in the past, so you have to wonder if their criticisms of each other's modeling approaches are 
+**Essentially, this table** shows that Nate Silver's forecast is better that Morris' forecast if former President Trump is re-elected. 
+It also suggests that Morris' forecast is slightly better if Vice-President Harris wins. 
+A closer look shows that Silver's scores are almost identical for each candidate, while Morris' are slightly more 
+unbalanced. This indicates to me that Silver's model may indeed be better than Morris' model, as it _seems_ to be better calibrated. 
+Silver and Morris have tangled a bit in the past, so you have to wonder if their criticisms of each other's modeling approaches are 
 valid or just enmity.  We'll find out soon, in a month!
-
-## 5. Testing
-
-
-$$ y = x^2 $$
-
 
 
