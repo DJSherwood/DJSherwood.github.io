@@ -73,7 +73,7 @@ valid or just enmity.  We'll find out soon, in a month!
 ## 5. Testing
 
 
-$ y = x^2 $
+$$ y = x^2 $$
 
 
 
