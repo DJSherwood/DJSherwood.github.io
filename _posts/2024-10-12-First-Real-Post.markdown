@@ -3,8 +3,9 @@ layout: default
 title: "First Post"
 date: 2024-10-12 18:36:00 -0500
 categories: random-thoughts
+lead: "This blog is an an experiment, with many goals..."
 ---
-This blog is an experiment, with many goals...
+Welcome to my blog! I have several goals I want to achieve using via this blog.
 
 Here they are: 
 1. Develop my thoughts in more detail for things I already understand

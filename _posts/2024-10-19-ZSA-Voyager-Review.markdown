@@ -3,11 +3,9 @@ layout: default
 title: "You Should Buy a Split, Mechanical Keyboard"
 date: 2024-10-19 21:15:00 -0500
 categories: review
+lead: "I am my keyboard's slave..."
 ---
-I am my keyboard's slave...
-
 My main keyboard for many years was a Microsoft Ergonomic 4000. I'm sure you are familiar with it. A large plastic frame, a bit of a "hump" in the middle that separates two sections of keys. A classic ergonomic keyboard. It served me well for many years until I noticed that some keys lost their action. I did a little bit of research and learned that this meant the entire keyboard was broken. Like many entry level keyboards, the Ergo 4000 uses a membrane with a raised "bubble" under each key. To fix a keyboard which operates from this mechanism, one would have to change the membrane for the entire keyboard. This sounded like a pain. Time to move on to a mechanical keyboard!
-
 It turns out there are many kinds of mechanical keyboards. My immediate considerations were:
 
 1. Layout

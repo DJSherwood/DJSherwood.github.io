@@ -3,11 +3,9 @@ layout: default
 title: "Calculating the Brier Score of an Election Forecast"
 date: 2024-10-16 08:15:00 -0500
 categories: python
+lead: "Have you ever wanted to evaluate your favorite election forecast?"
 ---
-
-I find election forecasting both captivating and boring...
-
-On the one hand, I feel compelled to check _fivethirtyeight.com_ (headed by G Elliot Morris)
+Another election cycle is upon us. On the one hand, I feel compelled to check _fivethirtyeight.com_ (headed by G Elliot Morris)
 or _The Silver Bulletin_ (headed by Nate Silver) every day to see how the percentage of winning has changed for each candidate. And then I see that usually, the estimation 
 for both candidates has moved by a few tenths of a point. _How disappointing_. But I _also_ noticed that Morris and Silver
 _differ_ in their predictions. Wouldn't it be neat to evaluate their forecasts before the election even occurs?
@@ -74,4 +72,4 @@ valid or just enmity.  We'll find out soon, in a month!
 
 ## 5. Testing
 
-$ x = y^2 $
+x = y^2
