@@ -72,8 +72,8 @@ valid or just enmity.  We'll find out soon, in a month!
 
 ## 5. Testing
 
-<div>
+
 $ y = x^2 $
-</div>
+
 
 
