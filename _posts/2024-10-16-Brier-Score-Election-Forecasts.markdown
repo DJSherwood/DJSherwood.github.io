@@ -21,6 +21,7 @@ The `Brier Score` is calculated by the following formula:
 $BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
 
 Here's how to do it in Python:
+
 ## 1. Download Forecast
 Nate Silver's _Bulletin_ is nice in that it provides a button to facilitate download. Unfortunately, _fivethirtyeight.com_ does not do that
 so you will have to get their data manually. 
