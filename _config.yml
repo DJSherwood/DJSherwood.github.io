@@ -28,7 +28,7 @@ linkedin_username: sherwooddaniel
 github_username:  DJSherwo
 
 # Build settings
-theme: jekyll-theme-merlot
+theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
   - jekyll-relative-links
