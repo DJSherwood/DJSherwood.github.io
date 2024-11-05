@@ -1,5 +1,6 @@
 ---
-layout: default
+author: "Daniel Sherwood"
+layout: post
 title: "You Should Buy a Split, Mechanical Keyboard"
 date: 2024-10-19 21:15:00 -0500
 categories: review

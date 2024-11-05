@@ -1,4 +1,5 @@
 ---
+author: "Daniel Sherwood"
 layout: post
 title: "First Post"
 date: 2024-10-12 18:36:00 -0500

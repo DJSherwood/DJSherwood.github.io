@@ -1,5 +1,6 @@
 ---
-layout: default
+author: "Daniel Sherwood"
+layout: post
 title: "Calculating the Brier Score of an Election Forecast"
 date: 2024-10-16 08:15:00 -0500
 categories: python
