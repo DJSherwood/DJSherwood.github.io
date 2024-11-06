@@ -72,7 +72,7 @@ The output is this:
 | Silver | 0.31       | 0.31        |
 | Morris | 0.32       | 0.28        |
 
-**Essentially, this table** shows that Nate Silver's forecast is better that Morris' forecast if former President Trump is re-elected. 
+**Essentially, this table** shows that Nate Silver's forecast is better than Morris' forecast if former President Trump is re-elected. 
 It also suggests that Morris' forecast is slightly better if Vice-President Harris wins. 
 A closer look shows that Silver's scores are identical for each candidate, while Morris' are slightly more 
 unbalanced. This indicates to me that Silver's model may indeed be better than Morris' model, as it _seems_ to be better calibrated. 
