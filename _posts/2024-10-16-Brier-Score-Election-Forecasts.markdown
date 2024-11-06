@@ -24,8 +24,8 @@ $BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
 Here's how to do it in Python:
 
 ## 1. Download Forecast
-Nate Silver's _Bulletin_ is nice in that it provides a button to facilitate download. Unfortunately, _fivethirtyeight.com_ does not do that
-so you will have to get their data manually. 
+Both fivethirtyeight.com and Nate Silver's _Bulletin_ is provide a data download. It's relatively easy to work Silver's data, but fivethirtyeight's data
+requires some extra selection/transformation.
 
 ## 2. Import Libraries & Load Data
 Only a few libraries are needed: `pandas` to load data into a data frame and the `brier_score_loss` function from `scikit-learn`. 
@@ -36,12 +36,15 @@ import pandas as pd
 from sklearn.metrics import brier_score_loss
 
 # load nate silver's data from .csv
-ns = pd.read_csv(filepath_or_buffer="./NateSilver3Sep2024.csv")
+ns = pd.read_csv(filepath_or_buffer="./SilverFinal.csv")
 ns = ns.dropna(axis=0)
 
 # load morris' data from .csv
-m = pd.read_csv(filepath_or_buffer="./Morris21Aug2024.csv")
-m = m.dropna(axis=0)
+m = pd.read_csv(filepath_or_buffer="./MorrisFinal.csv")
+m = m[ (m["state"] == "National") & (m["cycle"] == 2024) ][['candidate','pct_estimate']]
+m_trump =  m[ m['candidate'] == "Trump" ][['pct_estimate']].values
+m_harris = m[ m['candidate'] == "Harris" ][['pct_estimate']].values
+
 ```
 
 ## 3. Calculate Brier Score
@@ -57,11 +60,11 @@ def calc_brier_score(y):
     return bsl
 
 # calculate brier_score for silver
-silver_trump_bsl = calc_brier_score(ns["trump"].to_numpy())
-silver_harris_bsl = calc_brier_score(ns["harris"].to_numpy())
+silver_trump_bsl = calc_brier_score(ns["trump"].values)
+silver_harris_bsl = calc_brier_score(ns["harris"].values)
 # calculate brier_score for morris
-morris_trump_bsl = calc_brier_score(m["Trump"].to_numpy())
-morris_harris_bsl = calc_brier_score(m["Harris"].to_numpy())
+morris_trump_bsl = calc_brier_score(m_trump)
+morris_harris_bsl = calc_brier_score(m_harris)
 ```
 
 ## 4. Output!
