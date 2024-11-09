@@ -18,9 +18,9 @@ before the election even takes place?
 [wikipedia entry](https://en.wikipedia.org/wiki/Brier_score), but I will say briefly that the score ranges between 1 and 0. 
 A score of 1 means that the forecast is 100% in the wrong direction, while a score of 0 means the forecast is 100% correct.
 The `Brier Score` is calculated by the following formula:
-<div>
+
 $BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
-</div>
+
 Here's how to do it in Python:
 
 ## 1. Download Forecast
