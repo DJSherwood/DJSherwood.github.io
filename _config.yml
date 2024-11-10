@@ -33,6 +33,17 @@ plugins:
   - jekyll-feed
   - jekyll-relative-links
 markdown: kramdown
+comments:
+  giscus:
+    enabled: true
+    repo: "DJSherwood/DJSherwood.github.io"
+    repo_id: "R_kgDOM4qY7Q"
+    category: "General"
+    category_id: "DIC_kwDOM4qY7c4CkIt1"
+    mapping: "title"
+    reactions_enabled: "1"
+    theme: "preferred_color_scheme"
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
