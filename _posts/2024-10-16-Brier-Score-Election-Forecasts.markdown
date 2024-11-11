@@ -20,7 +20,7 @@ A score of 1 means that the forecast is 100% in the wrong direction, while a sco
 The `Brier Score` is calculated by the following formula:
 
 $BS = \frac{1}{N} \sum_{t=1}^{N} \sum_{i=1}^{R} (f_{ti} - o_{ti})^2$
-
+{: style="text-align: center;"}
 Here's how to do it in Python:
 
 ## 1. Download Forecast
