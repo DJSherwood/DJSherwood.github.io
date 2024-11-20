@@ -11,8 +11,10 @@ are still incredibly powerful tools for analyzing data. And they are relatively 
 of a particular variable. A random forest is a collection of decision trees, but the set of data is subset to include a 
 random number of columns/variables and a random number of rows/samples. The _number of trees_ corresponds to the number of 
 subsets specified from the data, but the number of binary splits corresponds to the _depth_ of the tree. Interestingly, it
-has been shown that it is impossible for a random forest to overfit by increasing the number of trees _<citation needed>_. 
-The same is not true for the depth of the tree; increasing the tree depth can absolutely lead to overfitting. 
+has been shown that it is impossible for a random forest to overfit by increasing the number of trees (citation needed). 
+The same is not true for the depth of the tree; increasing the tree depth can absolutely lead to overfitting. Random forests 
+are considered an ensemble learning method. That is, _every tree_ participates in making a prediction. The predictions are
+then averaged/aggregated together. Thus, a random forest is said to use "bagging" ( **b**ootstrap + **agg**regation).
 
 **So how do** we go about programming a random forest? We need a way to subset our data to consist of an arbitrary number of
 variables and samples. We need a function to choose a variable, and then split on it, and then choose one of the remaining
@@ -87,6 +89,7 @@ def score(col, y, split):
 and here's the score helper method:
 
 ```python
+# JH's
 def _side_score(side, y):
     tot = side.sum()
     if tot <= 1:
@@ -97,6 +100,7 @@ def _side_score(side, y):
 finally, the static method to process the dataframe:
 
 ```python
+# JH's
 def proc_data(df):
     df['Fare'] = df.Fare.fillna(0)
     df.fillna(df.mode().iloc[0], inplace=True)
