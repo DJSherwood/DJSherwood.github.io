@@ -28,6 +28,7 @@ linkedin_username: sherwooddaniel
 github_username:  DJSherwo
 github:
   repository_url: https://github.com/DJSherwood/DJSherwood.github.io
+  project_page: true
 # Build settings
 theme: jekyll-theme-slate
 plugins:
