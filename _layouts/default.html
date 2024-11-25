@@ -45,12 +45,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        {% if layout.default %}
-        <a href="/">Back to Home</a>
-        {% endif %}
-        {% if layout.post %}
-        <a href="/blog.html">Back to Blog</a>
-        {% endif %}
+      <a onclick="window.history.back()">Back</a>
         {{ content }}
       </section>
     </div>
