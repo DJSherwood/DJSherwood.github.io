@@ -45,11 +45,11 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        {% if site.layout.default %}
+        {% if layout.default %}
         <a href="/">Back to Home</a>
         {% endif %}
-        {% if site.layout.post %}
-        <a href="blog.html">Back to Blog</a>
+        {% if layout.post %}
+        <a href="/blog.html">Back to Blog</a>
         {% endif %}
         {{ content }}
       </section>
