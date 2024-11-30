@@ -17,10 +17,19 @@
     transform: translateX(-50%);
 }
 
+.prev, .next {
+    max-width: 150px; /* Adjust width as needed */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    text-align: left; /* for prev link */
+}
+
 .prev {
     margin-right: auto;
 }
 
 .next {
     margin-left: auto;
+    text-align: right; /* for next link */
 }
