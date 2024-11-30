@@ -5,10 +5,18 @@
 
 .PageNavigation {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
 }
 
-.PageNavigation a {
-    margin: 0 10px; /* Adds space around each link */
+.prev {
+    margin-right: auto; /* Pushes previous link to the left */
+}
+
+.next {
+    margin-left: auto; /* Pushes next link to the right */
+}
+
+.home {
+    margin: 0 20px; /* Adds space around the home link */
 }
