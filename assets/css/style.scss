@@ -4,19 +4,23 @@
 @import "{{ site.theme }}";
 
 .PageNavigation {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.prev {
-    margin-right: auto; /* Pushes previous link to the left */
-}
-
-.next {
-    margin-left: auto; /* Pushes next link to the right */
+    justify-content: space-between;
+    width: 100%;
 }
 
 .home {
-    margin: 0 20px; /* Adds space around the home link */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.prev {
+    margin-right: auto;
+}
+
+.next {
+    margin-left: auto;
 }
