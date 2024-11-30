@@ -5,10 +5,10 @@
 
 .PageNavigation {
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.spacer {
-    flex-grow: 1; /* Pushes links to opposite ends */
-    min-width: 20px; /* Minimum space between links */
+.PageNavigation a {
+    margin: 0 10px; /* Adds space around each link */
 }
