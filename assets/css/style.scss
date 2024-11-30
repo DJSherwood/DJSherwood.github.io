@@ -1,0 +1,14 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.PageNavigation {
+    display: flex;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1; /* Pushes links to opposite ends */
+    min-width: 20px; /* Minimum space between links */
+}
