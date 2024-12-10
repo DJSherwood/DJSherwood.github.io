@@ -49,6 +49,7 @@ the results of which are as follows:
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.809   | 2.310   |
 | Intercept | 1.05  | 0.901   | 1.191   |
+{: style="text-align: center;"}
 
 # 3. Recover Parameters with PYMC
 Now let's perform a basic regression with `PYMC`. This is a little more involved, making use of a python `context` via 
@@ -73,6 +74,7 @@ the results are very close!
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.815   | 2.306   |
 | Intercept | 1.05  | 0.904   | 1.190   |
+{: style="text-align: center;"}
 
 # 4. Discussion
 In the first example, the OLS model used maximum likelihood to determine the slope and intercept. Tests were perfomed, and 
