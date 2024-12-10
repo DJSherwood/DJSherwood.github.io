@@ -69,11 +69,12 @@ morris_harris_bsl = calc_brier_score(m_harris)
 
 ## 4. Output!
 The output is this: 
-
+<div>
 |        | Trump Wins | Harris Wins |
 |:-------|:-----------|:------------|
 | Silver | 0.31       | 0.31        |
 | Morris | 0.32       | 0.28        |
+</div>
 {: style="text-align: center;"}
 
 **Essentially, this table** shows that Nate Silver's forecast is better than Morris' forecast if former President Trump is re-elected. 
