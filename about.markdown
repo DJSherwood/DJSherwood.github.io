@@ -15,14 +15,14 @@ Dr. Fidel Sanatamaria agreed to let me join his lab in the fall of 2007. It turn
 I am forever grateful for Dr. Santamaria's mentorship; I learned so much from him. It was there that I learned to use `MATLAB`, 
 `MCell3`, `Linux`, create `bash` scripts and create parallel computing jobs on the **Texas Advanced Computing Center**'s (TACC) cluster.
 
-But, due to my father's sudden passing in 2007, I found myself mentally and emotionally exhausted by the time I graduated in 2009. 
+But, due to family tragedy in 2007, I found myself mentally and emotionally exhausted by the time I graduated in 2009. 
 I enrolled in a PhD program at Rice University anyway, but only lasted a semester and-a-half. I pulled myself together and 
 enrolled in a Master's for Biomedical Engineering at UTSA in 2011. Again, I was fantastically lucky in that I found a paid 
 position to work in Dr. Matthew Reilly's lab. Dr. Reilly was also a fantastic mentor. It was there that I started learning
 applied statistics.
 
 After graduating I was able to find a job with the **City of Austin** performing _ad hoc_ statistical analyses on crime data.
-I learned  to use `R`, `Python`, `Scikit-Learn`, and `SQL`...and that San Antonio has far better tacos than Austin.
+I learned  to use `R`, `Python`, `Scikit-Learn`, and `SQL`...and that San Antonio has far better tacos than Austin. 
 In 2019, I moved back to San Antonio with my wife and I got a job as a Senior Financial Analyst with **KCI**, a biomedical company 
 that specialized in selling wound vac services. They were bought by **3M** in the fall of 2019. I mastered the art of creating 
 compelling dashboards with `Tableau` and experimented with `XGBoost`'s `accelerated-failure-time` objective function.
