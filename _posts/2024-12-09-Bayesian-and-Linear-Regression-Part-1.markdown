@@ -43,13 +43,12 @@ model = sm.OLS(y,x)
 results = model.fit()
 print(results.params)
 ```
-the results of which are as follows: 
-<div>
+the results of which are as follows:
+
 |           | Mean  | LwrConf | UprConf |
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.809   | 2.310   |
 | Intercept | 1.05  | 0.901   | 1.191   |
-</div>
 {: style="text-align: center;"}
 
 # 3. Recover Parameters with PYMC
@@ -70,12 +69,11 @@ with Model() as model:
 print(az.summary(idata, var_names=["intercept","slope"], hdi_prob=0.95, fmt='long'))
 ```
 the results are very close! 
-<div>
+
 |           | Mean  | LwrConf | UprConf |
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.815   | 2.306   |
 | Intercept | 1.05  | 0.904   | 1.190   |
-</div>
 {: style="text-align: center;"}
 
 # 4. Discussion
