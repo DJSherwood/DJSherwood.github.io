@@ -1,7 +1,7 @@
 ---
 author: "Daniel Sherwood"
 layout: post
-title: "Bayesian & Ordinary Regression - Part 1"
+title: "Bayesian Regression - Part 1"
 date: 2024-12-09 20:58:00 -0500
 categories: python
 lead: "Bayesian Regression ~ OLS"
@@ -28,4 +28,4 @@ y = true_regression_line + rng.normal(scale=0.5, size=size)
 ```
 **here's the data** we generated.
 
-![the_data.png](/assests/images/the_data.png)
+![the_data.png](/assets/images/the_data.png)
