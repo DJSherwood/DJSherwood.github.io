@@ -13,8 +13,7 @@ the cart before the horse. I have three separate posts in mind to explain my tho
 how similar Bayesian and orinary regression are to each other. The second will go into more details as to how they differ, 
 and the third will talk about implications for prediction. 
 
-**The first thing** we will do is generate some data. The following piece of code is ripped straight from a  
-`PYMC` [notebook](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/GLM_linear.html). 
+**The first thing** we will do is generate some data. The following piece of code is ripped straight from a `PYMC` [notebook](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/GLM_linear.html). 
 
 ```python
 size = 200
@@ -28,4 +27,5 @@ true_regression_line = true_intercept + true_slope * x
 y = true_regression_line + rng.normal(scale=0.5, size=size)
 ```
 **here's the data** we generated.
-![The Data](/assests/images/the_data.png)
+
+![the_data.png](/assests/images/the_data.png)
