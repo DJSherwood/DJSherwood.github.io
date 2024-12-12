@@ -13,9 +13,9 @@ to justify why one distribution should be used as my prior versus another. But I
 how similar Bayesian and orinary regression are to each other. The second will go into more details as to how they differ, 
 and the third will talk about implications for prediction. 
 
-As a refresher, here is the maximul likelihood formulation used in Frequentist/ordinary regression: 
+As a refresher, here is the maximum likelihood formulation used in Frequentist/ordinary regression: 
 
-$\hat{\beta} = \arg\max_{\beta} \prod_{i=1}^{n} p(y_i \| x_i, \beta)$
+$\log L(\beta | X, y) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - x_i^T\beta)^2$
 {: style="text-align: center;"}
 
 And here is the mathematical formulation for Bayesian regression:
