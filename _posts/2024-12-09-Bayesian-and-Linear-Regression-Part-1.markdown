@@ -2,16 +2,22 @@
 author: "Daniel Sherwood"
 layout: post
 title: "Bayesian Regression - Part 1"
-date: 2024-12-09 20:58:00 -0500
+date: 2024-12-09 08:58:00 -0500
 categories: python
 lead: "Bayesian Regression ~ OLS"
 --- 
 **I will admit** that the Bayesian approach to statistical modeling is not perfect. There are some who treat the word _Bayesian_ 
-as a slur, and others who treat it as a sacrament to be enjoyed by the holy few. I am a little more ambivalent. Although it
-is incredibly fun to work with, I've found it personally frustrating to fine-tune the priors of my model. But I am putting 
-the cart before the horse. I have three separate posts in mind to explain my thoughts. The first, this post, will be about 
+as a slur, and others who treat it as a sacrament to be enjoyed by the holy few. I am a little more ambivalent. Bayesian 
+modeling requires one to specify _prior distributions_ for the variables one is modeling. I've personally found it difficult
+to justify why one distribution should be used as my prior versus another. But I am getting ahead of myself. I have three separate posts in mind to explain my thoughts. The first, this post, will be about 
 how similar Bayesian and orinary regression are to each other. The second will go into more details as to how they differ, 
 and the third will talk about implications for prediction. 
+
+As a refresher, here is the maximul likelihood formulation used in Frequentist/ordinary regression: 
+
+And here is the mathematical formulation for Bayesian regression. 
+$p(\beta | X, y, \sigma^2) = \frac{p(y | X, \beta, \sigma^2) \cdot p(\beta)}{\int p(y | X, \beta, \sigma^2) \cdot p(\beta) d\beta}$
+{: style="text-align: center;"}
 
 # 1. Generate Some Data
 **The first thing** we will do is generate some data. The following piece of code is copied straight from a `PYMC` [notebook](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/GLM_linear.html). 
@@ -77,7 +83,7 @@ the results are very close!
 {: style="text-align: center;"}
 
 # 4. Discussion
-In the first example, the OLS model used maximum likelihood to determine the slope and intercept. Tests were perfomed, and 
+*In the first* example, the OLS model used maximum likelihood to determine the slope and intercept. Tests were perfomed, and 
 the relevant statistic was used to create a confidence interval around the parameter. A 95% confidence interval states that
 95 out of 100 similar intervals will contain the parameter. This has been causing confusion for decades. The results from 
 Bayesian Linear Regression, however, mean something a bit different. What is essentially happening is that a _multitude_ of 
@@ -85,7 +91,7 @@ slopes and intercepts have been calculated, resulting in a _distribution_ of our
 surrounding our parameter states that 95 out of 100 _slopes parameters_ will be within the interval. This makes much more 
 intuitive sense.
 
-You can see that Bayesian Linear Regression almost exactly equals Frequentist Linear regression when the prior distribution 
+*You can see* that Bayesian Linear Regression almost exactly equals Frequentist Linear regression when the prior distribution 
 specified for the parameters is uniform. We assumed absolutely _no knowledge_ about our slope or intercept and our Bayesian 
 results matched our OlS results. So, in a way, you can think of frequentist approaches as doing the same: they assume nothing
 about the data. This philosophy is the primary point of contention between Bayesian-ists and Frequentists. Should you assume 
