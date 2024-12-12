@@ -15,11 +15,11 @@ and the third will talk about implications for prediction.
 
 As a refresher, here is the maximul likelihood formulation used in Frequentist/ordinary regression: 
 
-$\hat{\beta} = \arg\max_{\beta} \prod_{i=1}^{n} p(y_i | x_i, \beta)$
+$\hat{\beta} = \arg\max_{\beta} \prod_{i=1}^{n} p(y_i \| x_i, \beta)$
 
 And here is the mathematical formulation for Bayesian regression:
 
-$p(\beta | X, y, \sigma^2) = \frac{p(y | X, \beta, \sigma^2) \cdot p(\beta)}{\int p(y | X, \beta, \sigma^2) \cdot p(\beta) d\beta}$
+$p(\beta \| X, y, \sigma^2) = \frac{p(y \| X, \beta, \sigma^2) \cdot p(\beta)}{\int p(y \| X, \beta, \sigma^2) \cdot p(\beta) d\beta}$
 
 # 1. Generate Some Data
 **The first thing** we will do is generate some data. The following piece of code is copied straight from a `PYMC` [notebook](https://www.pymc.io/projects/docs/en/stable/learn/core_notebooks/GLM_linear.html). 

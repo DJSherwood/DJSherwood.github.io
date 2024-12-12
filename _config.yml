@@ -34,7 +34,7 @@ theme: jekyll-theme-slate
 plugins:
   - jekyll-feed
   - jekyll-relative-links
-#markdown: kramdown
+markdown: kramdown
 comments:
   giscus:
     enabled: true
