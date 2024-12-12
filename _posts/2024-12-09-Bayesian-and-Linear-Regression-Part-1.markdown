@@ -15,7 +15,7 @@ and the third will talk about implications for prediction.
 
 As a refresher, here is the maximum likelihood formulation used in Frequentist/ordinary regression: 
 
-$\log L(\beta | X, y) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - x_i^T\beta)^2$
+$\log L(\beta \| X, y) = -\frac{n}{2}\log(2\pi\sigma^2) - \frac{1}{2\sigma^2} \sum_{i=1}^{n} (y_i - x_i^T\beta)^2$
 {: style="text-align: center;"}
 
 And here is the mathematical formulation for Bayesian regression:
