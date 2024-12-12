@@ -59,7 +59,7 @@ the results of which are as follows:
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.809   | 2.310   |
 | Intercept | 1.05  | 0.901   | 1.191   |
-{: style="text-align: center;"}
+
 
 # 3. Recover Parameters with PYMC
 Now let's perform a basic regression with `PYMC`. This is a little more involved, making use of a python `context` via 
@@ -84,10 +84,10 @@ the results are very close!
 |:-------   |:------|:--------|:--------|
 | Slope     | 2.06  | 1.815   | 2.306   |
 | Intercept | 1.05  | 0.904   | 1.190   |
-{: style="text-align: center;"}
+
 
 # 4. Discussion
-*In the first* example, the OLS model used maximum likelihood to determine the slope and intercept. Tests were perfomed, and 
+**In the first** example, the OLS model used maximum likelihood to determine the slope and intercept. Tests were perfomed, and 
 the relevant statistic was used to create a confidence interval around the parameter. A 95% confidence interval states that
 95 out of 100 similar intervals will contain the parameter. This has been causing confusion for decades. The results from 
 Bayesian Linear Regression, however, mean something a bit different. What is essentially happening is that a _multitude_ of 
@@ -95,7 +95,7 @@ slopes and intercepts have been calculated, resulting in a _distribution_ of our
 surrounding our parameter states that 95 out of 100 _slopes parameters_ will be within the interval. This makes much more 
 intuitive sense.
 
-*You can see* that Bayesian Linear Regression almost exactly equals Frequentist Linear regression when the prior distribution 
+**You can see** that Bayesian Linear Regression almost exactly equals Frequentist Linear regression when the prior distribution 
 specified for the parameters is uniform. We assumed absolutely _no knowledge_ about our slope or intercept and our Bayesian 
 results matched our OlS results. So, in a way, you can think of frequentist approaches as doing the same: they assume nothing
 about the data. This philosophy is the primary point of contention between Bayesian-ists and Frequentists. Should you assume 
