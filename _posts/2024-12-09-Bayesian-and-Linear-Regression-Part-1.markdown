@@ -15,7 +15,11 @@ and the third will talk about implications for prediction.
 
 As a refresher, here is the maximul likelihood formulation used in Frequentist/ordinary regression: 
 
-And here is the mathematical formulation for Bayesian regression. 
+$\hat{\beta} = \arg\max_{\beta} \prod_{i=1}^{n} p(y_i | x_i, \beta)$
+{: style="text-align: center;"}
+
+And here is the mathematical formulation for Bayesian regression:
+
 $p(\beta | X, y, \sigma^2) = \frac{p(y | X, \beta, \sigma^2) \cdot p(\beta)}{\int p(y | X, \beta, \sigma^2) \cdot p(\beta) d\beta}$
 {: style="text-align: center;"}
 
