@@ -77,27 +77,64 @@ A consumer only starts receiving messages after it has been activated, it has no
 Now consider the idea of combining durable databases with low-latency notification facilities? 
 Welcome to log-based message brokers.
 
+Something something offsets. 
+
 #### Using Logs For Message Storage
 
+Logs are append only, possible to create a message broker that is a glorified log. 
+A consumer receives messages by reading the log, sequentially.
+( If a consumer reaches the end of the log, it waits for a notification that a new message has been appended...so that would 
+be a separate service? )
 
+Of course, logs can be partitioned on different machines for increased performance  ( but what about those notifications? ). 
+I guess the individual partitions would serve a specific set of consumers.
 
 #### Logs Compared to Traditional Messaging
 
+Fan out is trivial to support with log based messaging ( each consumer can independently verify all logs ). 
+But, as I thought, serving a particular partition to a set of consumers is also a thing. The downside is that the number of nodes sharing a topic can be at most the number of log partitions in that topic. 
+If a single message is slow to process, that partition's performance is slowed due to blocking.
+
 #### Consumer Offsets
+
+Same process as in database replication, the log sequence number allows the message broker to act as the leader, 
+and the consumer acts like a follower. 
+When a node fails, a new node resumes where the old node left off, following the offset ( still could result in duplicated, processed messages. )
 
 #### Disk Space Usage
 
+Eventually the log will need to be over-written due to space limitations. 
+So this entire setup is only a buffer.
+
 #### When Consumers Cannot Keep Up with Producers
+
+This isn't really a big problem, as there are other consumers ( presumably ) to take over. 
 
 #### Replaying Old Messages
 
+Can essentially switch a past set of messages by selecting previous offsets and feeding them back into the consumers.
+
 ## Databases and Streams
+
+Apply concepts from streams and apply them to databases!
+A stream is a log is a database, after all.
 
 ### Keeping Systems in Sync
 
+No single system can provide for all computing needs. 
+Thus, multiple systems are used, but they do need to be kept in sync.
+Maybe the best way to do this is to have the search index be the follower and the database be the leader. 
+Is this possible? 
+
 ### Change Data Capture
 
+A problem is that the databases's replication logs are not considered a public API. 
+Clients query the datamodel through via SQL, not parse through the replication logs. 
+*Change Data Capture* is to observe all data changes written to a database and extract them in which they can be replicated to other systems. 
+
 #### Implementing Change Data Capture
+
+
 
 #### Initial Snapshot
 
