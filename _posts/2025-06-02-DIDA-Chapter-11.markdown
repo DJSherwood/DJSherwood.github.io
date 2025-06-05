@@ -129,36 +129,67 @@ Is this possible?
 ### Change Data Capture
 
 A problem is that the databases's replication logs are not considered a public API. 
-Clients query the datamodel through via SQL, not parse through the replication logs. 
+Clients query the data model through via SQL, not parse through the replication logs. 
 *Change Data Capture* is to observe all data changes written to a database and extract them in which they can be replicated to other systems. 
 
 #### Implementing Change Data Capture
 
-
+Whatever ends up consuming the log are called *derived data systems*. 
+Essentially, one database is the leader and turns the others into followers. 
+Triggers can be used to implement change data capture by registering triggers that observe all changes to data tables.
+CDC is asynchronous ( which means replication lag applies ). 
 
 #### Initial Snapshot
 
+To get started, an initial snapshot is needed. 
+
 #### Log Compaction 
+
+Since the log files cannot grow past storage, use *log compaction* to keep things tidy. 
+The storage engine looks for log records with the same key, destroys duplicates, and keeps only the most recent update for each key. 
+Implemented for CDC, every change has a primary key, so the most recent write for that particular key is kept.
 
 #### API Support for Change Streams
 
+Databases are more and more supporting CDC and streams. 
+
 ### Event sourcing
+
+Developed in the *domain-driven design* community, event sourcing stores all changes to the application state as a log of change events.
+This essentially recording the users's actions as immutable events.
 
 #### Deriving Current State From the Event Log
 
+Applications using event sourcing need to take the log of events and transform it into application state that is suitable for showing to a user. 
+
 #### Commands and Events
+
+Commands are different from events. Any validation of a command  needs to happen synchronously, before it becomes an event. 
+By the time the *consumer* sees the event, it has already become an immutable part of the log.
 
 ### State, Streams, and Immutability
 
-(ooh a formula )
+Application state is the integration of an event stream in time.
+Change stream is the differentiation state with respect to time.
 
 #### Advantages of Immutable Events
 
+Useful to have a log of immutable events when debugging or improving a system.
+
 #### Deriving Several Views from the Same Event Log
+
+Separating mutable state from the immutable event log, you can derive several different read-oriented representations from the same log of events. 
 
 #### Concurrency Control 
 
+Downside of event sourcing and CDC is that the consumers of the event log are asynchronous.
+But deriving the current state from an event log also simplifies some aspects of concurrency control. 
+An event can be designed to be a self-contained description of a user action. 
+The user action would only require a single write in one place...which would make it atomic. 
+
 #### Limitations of Immutablity 
+
+There are times when it is necessary to absolutely delete data. This is surprisingly hard to accomplish. 
 
 ## Processing Streams
 
