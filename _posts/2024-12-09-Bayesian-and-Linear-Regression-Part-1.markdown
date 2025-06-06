@@ -3,9 +3,8 @@ author: "Daniel Sherwood"
 layout: post
 title: "Bayesian Regression - Part 1"
 date: 2024-12-09 08:58:00 -0500
-categories: python
 lead: "Bayesian Regression ~ OLS"
---- 
+---
 **I will admit** that the Bayesian approach to statistical modeling is not perfect. There are some who treat the word _Bayesian_ 
 as a slur, and others who treat it as a sacrament to be enjoyed by the holy few. I am a little more ambivalent. Bayesian 
 modeling requires one to specify _prior distributions_ for the variables one is modeling. I've personally found it difficult

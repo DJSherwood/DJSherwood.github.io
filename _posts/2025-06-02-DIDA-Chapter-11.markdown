@@ -253,24 +253,64 @@ To adjust for incorrect device clocks, log:
 
 ### Stream Joins
 
-
+Because new events can appear anytime ona stream, joins to streams are more challenging than in batch jobs.
 
 #### Stream-Stream Join (Window Join)
 
+Stream processor needs to maintain *state*. An event is added to the appropriate index, and then the complementary stream's index is also checked. 
+If there is match, emit an event declaring a match.
+
 #### Stream-Table (Stream Enrichment)
+
+Basically use CDC, stream processor subscribes to a changelog, which is then compared to a static table. 
 
 #### Table-Table Join (Materialized View Maintenance)
 
+ex.
+```
+SELECT 
+    follows.follower_id as timeline_id
+    , array_agg(tweets.* order by tweets.timestamp DESC)
+FROM 
+    tweets
+JOIN 
+    follows
+        on follows.followee_id = tweets.sender_id
+GROUP BY
+    follows.follower_id 
+```
+
 #### Time-Dependence of Joins 
+
+The above types require the stream processor to maintain some sort of state. 
+Order is important, but there is no guarantee of ordering except within a partition.
+( if state changes over time, and you join with state, which state do you choose? )
 
 ### Fault Tolerance
 
+Difficult to handle faults because can never stop processing.
+
 #### Microbatching and Checkpointing
+
+Can break data into small blocks and treat each block as a miniature batch. 
+That means you can rely on batching fault failure. 
+This also creates a tumbling window.
+Or maybe generate rolling checkpoints.
 
 #### Atomic Commit Revisited 
 
+Unclear exactly how atomic commit is implemented here.
+
 #### Idempotence
+
+This is an operation that can be applied multiple times ( but it has the same effect as applying it once ). 
 
 #### Rebuilding State After a Failure
 
+Can try to keep state in a remote datastore and replicate it. 
+Or maybe keep state local to the stream processor and replicate it periodically. 
+Or maybe rebuild thet state from the input streams ( ex if state conssits of aggregations ove a short window, it could easy enough to replay the input events within the window ).
+
 ## Summary
+
+Finally!
