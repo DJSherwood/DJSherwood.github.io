@@ -267,10 +267,9 @@ Basically use CDC, stream processor subscribes to a changelog, which is then com
 #### Table-Table Join (Materialized View Maintenance)
 
 ex.
-```
+```shell
 SELECT 
-    follows.follower_id as timeline_id
-    , array_agg(tweets.* order by tweets.timestamp DESC)
+    follows.follower_id as timeline_id, array_agg(tweets.* order by tweets.timestamp DESC)
 FROM 
     tweets
 JOIN 
