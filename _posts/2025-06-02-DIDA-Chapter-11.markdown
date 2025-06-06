@@ -3,7 +3,6 @@ author: "Daniel Sherwood"
 layout: post
 title: "Designing Data Intesive Applications - Chapter 11"
 date: 2025-06-02 15:44:00 -0500
-categories: python
 lead: "Stream Processing"
 ---
 **I have had** the incredible opportunity to participate in the *Coder's Study Group* located in my city. 
@@ -193,29 +192,68 @@ There are times when it is necessary to absolutely delete data. This is surprisi
 
 ## Processing Streams
 
+Three options for processing: 
+1. Write data from event to a database
+2. Push the event to a user
+3. Push the event to another stream
+
+This chapter will focus on #3. 
+An operator that does takes input as read-only and makes output which is append-only.
+
 ### Uses of Streams Processing
+
+Fraud detection, trading systems, manufacturing systems monitoring status, military and intelligence systems.
 
 #### Complex Event Processing
 
+*Complex Event Processing* allows you to specify rules to search for certain patterns of events in a stream. 
+Queries are stored long term, and new events are evaluated against the query. 
+
 #### Stream Analytics
+
+Measuring rate, rolling average over some time period, comparing previous periods to current periods
 
 #### Maintaining Materialized Views
 
+Creating a view of the log of events. *huh*
+
 #### Search on Streams
+
+Text search on streams...again the query is stored and the data is run past the query. 
 
 #### Message passing and RPC
 
+RPC systems and message passing are not the same. Although, there is some crossover. 
+
 ### Reasoning about Time
+
+Useful to include timestamps.
 
 #### Event Time Versus Processing Time
 
+Don't confuse event time and processing time! Sometimes the process takes longer than the event. 
+
 #### Knowing When You Are Ready 
+
+Have you received all events of a certain window?
 
 #### Whose Clock Are You Using, Anyway?
 
+To adjust for incorrect device clocks, log: 
+1. Time at which the event occurred (device clock)
+2. Time at which event was sent to the server (device clock)
+3. Time at which the event was received by the server (server clock)
+
 #### Types of Windows
 
+1. Tumbling Window
+2. Hopping Window
+3. Sliding Window
+4. Session Window
+
 ### Stream Joins
+
+
 
 #### Stream-Stream Join (Window Join)
 
