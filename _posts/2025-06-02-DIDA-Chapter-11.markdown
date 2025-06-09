@@ -1,7 +1,7 @@
 ---
 author: "Daniel Sherwood"
 layout: post
-title: "Designing Data Intesive Applications - Chapter 11"
+title: "Designing Data Intensive Applications - Chapter 11"
 date: 2025-06-02 15:44:00 -0500
 lead: "Stream Processing"
 ---
