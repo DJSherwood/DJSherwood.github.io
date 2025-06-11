@@ -10,13 +10,28 @@ lead: "The Future of Data Systems"
 
 # Data Integration
 
+For a given problem, there are several solutions. 
+The most appropriate software tool is dependent on the circumstances.
+
 ## Combining Specialized Tools by Deriving Data
+
+Often systems require multiple tools to work together. 
+In this sense, consider the "data flowing" through a series of software tools. 
 
 ### Reasoning about dataflows
 
+Important to track the inputs and outputs of data as it flows through your software. 
+Allowing an application to write to both the search index and the database could affect concurrency.
+Useful to funnel all user input through a single system that decides on an ordering for all writes. 
+
 ### Derived data versus distributed transactions
 
+Distributed transactions are used to keep different data systems consistent. 
+Distributed systems provide linearizability while derived data systems are updated asynchronously.
+
 ### The limits of total ordering
+
+
 
 ### Ordering events to capture causality
 
