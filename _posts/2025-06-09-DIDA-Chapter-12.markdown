@@ -27,23 +27,45 @@ Useful to funnel all user input through a single system that decides on an order
 ### Derived data versus distributed transactions
 
 Distributed transactions are used to keep different data systems consistent. 
-Distributed systems provide linearizability while derived data systems are updated asynchronously.
+Distributed systems provide linearizability while derived data systems update asynchronously.
 
 ### The limits of total ordering
 
-
+A totally ordered event log is feasible with systems that are small. 
+Formally, "deciding on a total order of events is known as *total order broadcast* which is equivalent to consensus."
 
 ### Ordering events to capture causality
 
+How to get a correct order of events, needed by causally connected systems? 
+Log an event to record the state before the change with a unique identifier, then later events will refer to this previous event to capture causal dependency.
+
 ## Batch and Stream Processing
+
+Batching and stream have a lot in common. 
+"Spark performs stream processing on top of a batch processing engine by breaking the stream into *microbatches*, whereas Apache Flink performs batch processing on top of a stream processing engine".
 
 ### Maintaining derived state
 
+Batch processing encourages deterministic, prue functions whose output depends only on the input and which have no side effects other than the explicit outputs.
+Stream processing has all the above but also extends operators to allow managed, fault-tolerant state.
+
 ### Reprocessing data for application evolution 
+
+Stream processing allows changes in the input to be reflected in derived views with low delay and batch processing allows large amounts of accumulated historical data to be reprocessed to derive new views onto an existing dataset.
 
 ### The lambda architecture
 
+The *lambda architecture* runs two different systems in parallel:
+
+1. batch processing like Hadoop MapReduce
+2. stream processing like Storm
+
+with the intention of recording incoming data by appending immutable events to an always growing dataset.
+From these events, read-optimized views are derived. 
+
 ### Unifying batch and stream processing
+
+Replaying historical events, ensuring that bad outputs from faults are eliminated from the stream, and tools for windowing time allow for the unification of streaming and batch processing.
 
 # Unbundling Databases
 
