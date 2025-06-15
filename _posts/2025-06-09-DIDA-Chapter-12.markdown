@@ -69,17 +69,56 @@ Replaying historical events, ensuring that bad outputs from faults are eliminate
 
 # Unbundling Databases
 
+The hadoop ecosystem is somewhat like a distributed version of Unix.
+Unix presents programmers with low-level hardware abstraction, while relational databases give programmers a high-level abstraction that hides complexities of data structures on disk, concurrency, cash recovery, etc.
+
 ## Composing Data Storage Technologies
+
+Databases have: 
+
+1. Secondary indexes
+2. Materialized views
+3. Replication logs
+4. Full-text search indexes
+
+There are parallels between the features that are built into databases and derived data systems.
 
 ### Creating an index
 
+1. Database scans over a consistent snapshot of a table
+2. pick out field values being indexed
+3. Sort them
+4. Write out to index
+5. Process the backlog of writes (since the consistent snapshot was taken)
+6. Continue to keep the index up to date
+
+This is similar to setting up a follower replica.
+
 ### The meta-database of everything
+
+The dataflow over an entire organization starts looking like one huge database.
+Batch and streaming processes are like elaborate triggers, stored procedures, and materialized views
+
+Perhaps there will be two main avenues of storage and processing: 
+
+1. Federated databases: unifying reads
+2. Unbundled databases: unifying writes
 
 ### Making unbundling work
 
+The *"traditional approach to synchronizing writes requires distributed transactions across heterogeneous storage systems*", which the author believes is incorrect.
+And asynchronous event log with idempotent writes is preferable.
+
+The big advantage of log-based integration is *loose coupling* between the various components. 
+
 ### Unbundled versus integrated systems
 
+"Databases are still required for maintaining state in stream processors, ad in order to server queries for the output of batch and stream processors."
+
 ### What's missing?
+
+"We don't yet have the unbundled database equivalent of the Unix shell." (a high level language for composing storage and processing systems in a simple and declarative way).
+Ex, ```mysql | elastic search```
 
 ## Designing Applications Around Dataflow
 
