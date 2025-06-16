@@ -122,15 +122,51 @@ Ex, ```mysql | elastic search```
 
 ## Designing Applications Around Dataflow
 
+Composing specialized storage and processing systems with application code is known as "database inside-out."
+Spreadsheets have more dataflow programming capabilities compared to most programming languages.
+
 ### Application code as a derivation function 
+
+A derived dataset results from a transformation applied to an initial dataset.
+
+1. Secondary index
+2. Full text index
+3. ML Model
+4. Cache containing aggregated data
+
+Databases struggle with executing custom code.
 
 ### Separation of application code and state
 
+Theoretically, "databases could be deployment environments for arbitrary application code, like an operating system."
+Practically, this doesn't work. 
+Other applications like Kubernetes, work well at this.
+
+The trend has been to keep stateless application logic separate from state management (database).
+Databases notifying users via subscription of changes is slowly becoming a feature.
+
 ### Dataflow: Interplay between state changes and application code
+
+Thinking about applications in terms of dataflow, means reconsidering relationship between database and state management.
+Keep in mind that maintaining derived data is not the same as asynchronous job execution. 
+
+* derived data: order of state changes is important, but message brokers do not have this capability
+* derived data: fault tolerance is key
+
+Modern stream processing can provide these ordering and reliability guarantees at scale?
 
 ### Stream processors and services
 
+Currently, application development involves breaking down functions into a set of *services* that communicate via synchronous network requests such as REST APIs.
+Loose coupling provides scalability.
+Dataflow systems are different, as they use asynchronous, 1 way communication instead of two way REST services.
+
+( wait, how is this working?)
+In the database approach, the code that processes purchases would subscribe to a stream of exchange rate updates, record the current rate in a local database, then just query the database when needed.
+
 ## Observing Derived State
+
+
 
 ### Materialized views and caching
 
