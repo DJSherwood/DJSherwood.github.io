@@ -199,8 +199,14 @@ Need to move away from request/response to publish/subscribe.
 ### Reads are events too
 
 Recall that stream processors also need to maintain state to perform aggregations and joins.
+When both writes and reads are represented as events, and outed to the same stream, a stream-table join is performed.
+Serving requests = performing joins.
+Writing read events to durable storage enables better tracking of causal dependencies.
 
 ### Multi-partition data processing
+
+Send queries through a stream and collect responses. 
+Treating queries as streams provides an option for implementing large-scale solutions.
 
 # Aiming for Correctness
 
