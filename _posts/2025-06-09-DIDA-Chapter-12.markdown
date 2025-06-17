@@ -166,17 +166,39 @@ In the database approach, the code that processes purchases would subscribe to a
 
 ## Observing Derived State
 
-
+The process for creating and keeping derived datasets is called the *write path*.
+If you want to query the derived dataset, then you will follow the *read path*.
 
 ### Materialized views and caching
 
+Ex. the *write path* updates a full-text search index and the *read path* searches the index for keywords.
+Without an index, search would be expensive.
+But precomputing all possible queries would be extremely difficult on the *write-path*, too.
+An additional option is to create a *cache* of common search results.
+Basically, perform work that exists on the boundary between the *write-path* and the *read-path*.
+
 ### Stateful, offline-capable clients
+
+Renewed interest in *offline-first* applications (they use a local database first, then connect online second).
+Think of the on-device state as a *cache of state on the server*.
+"The pixels on the screen are a materialized view onto model objects in the client app; the model objects are a local replica of state in a remote datacenter."
 
 ### Pushing state changes to clients
 
+"...actively pushing state changes all the way to client devices means extending the write path all the way to the end user."
+Each device would be a subscriber to a small stream of events.
+
 ### End-to-end event streams
 
+React + Flux + Redux manage internal client-side state by subscribing to a stream of events representing user input/responses from a server. 
+Natural to extend this to allow a sever to push state-change events into the client-side event pipeline.
+State changes flow through *write-path*.
+Challenge is that the assumption of stateless clients and request/response interactions is ery deeply ingrained. 
+Need to move away from request/response to publish/subscribe.
+
 ### Reads are events too
+
+Recall that stream processors also need to maintain state to perform aggregations and joins.
 
 ### Multi-partition data processing
 
