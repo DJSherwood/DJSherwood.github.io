@@ -210,23 +210,52 @@ Treating queries as streams provides an option for implementing large-scale solu
 
 # Aiming for Correctness
 
+The old reliable ( but slower transactions ) vs. newer scalability ( but only eventual consistency ). 
+
 ## The End-to-End Argument for Databases
+
+If an application writes incorrect data or delete data from a database, serializable transactions aren't going to save you.
 
 ### Exactly-once execution of an operation 
 
-### Duplicate supression 
+Processing twice is a from of data corruption. _Exactly once_ means arranging the computation such that the final effect is the same as if no faults ahd occurred. 
+
+### Duplicate suppression 
+
+A nasty problem that is hard to completely overcome, as it can occur at several points. 
+They can occur between the database client and server, but they can also occur between the network and the end device. 
+From the web server's point of view, a retry is a separate request, but from the database's point of view it is a separate transaction. 
 
 ### Operation identifiers
 
+So to truly make something idempotent one has to consider the _end-to-end_ flow. 
+Could generate an id for every operation, then write to a table that has a uniqueness constraint.
+
 ### The end-to-end argument
+
+The function in question can only be implemented by the applications standing at the endpoints. 
+Providing the function as a feature of the communication system itself is not possible.
 
 ### Applying end-to-end thinking in data systems
 
-## Enforcing Contraints
+Transactions are useful but not quite good enough.
+
+## Enforcing Constraints
+
+Uniqueness constraints can help assuage duplication issues, and can be useful in unbunbled databases. 
 
 ### Uniqueness constraints require consensus
 
+Enforcing a uniqueness constraint requires consensus.
+
 ### Uniqueness in log-based messaging 
+
+"The log ensures that all consumers see messages in the same order -- a guarantee that is formally known as _total order broadcast_ which is equivalent to consensus."
+In the case of several users attempting to claim the same user-name:
+
+1. Each request is encoded as a message & appended to a partition 
+2. Stream processor reads the requests in the log. For every request for a username that is available, it records the name as taken it emits a success message ( or if already taken, a rejection message) to an output stream. 
+3. Client watches the output stream, waiting for a success or a rejection.
 
 ### Multi-partition request processing
 
