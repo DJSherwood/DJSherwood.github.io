@@ -259,13 +259,44 @@ In the case of several users attempting to claim the same user-name:
 
 ### Multi-partition request processing
 
+Ensuring an operation satisfies constraints when involving multiple partitions can be difficult. 
+Correctness can be achieved with partitioned logs: 
+
+1. The request is given a unique ID an appended to the log partition
+2. The stream processor reads the lof or requests and emits *2* messages:
+    * a debit instruction to the payer account
+    * a credit instruction to the payee account
+3. Subsequent processors consume the streams of credit and debit instructions, de-duplicate by request ID, and apply changes to account balances.
+
 ## Timeliness and Integrity
+
+Transactions are typically _linearizable_ .
+When unbundling occurs, this is no longer the case.
+Definition of _Timeliness_ and _Integrity_ (preferable to the term _consistency_).
 
 ### Correctness of dataflow systems
 
+ACID transactions provide by timeliness and integrity guarantees. 
+But an event based dataflow decouples timeliness and integrity.
+Stream processing can preserve integrity without requiring distributed transactions and an atomic commit. 
+
+1. Represent content of write message as a single message
+2. Derive all other state updates from that single message
+3. Pass a client generated request ID through all these levels of processing, ensuring _idempotence_ and _end-to-end duplicate suppression_. 
+4. Make the messages immutable and allow derived data to be reprocessed from time to time
+
 ### Loosely interpreted constraints
 
+Enforcing a uniqueness constraint requires consensus, implemented by funneling all events in a partition to a single node.
+Integrity is required, but timeliness on the _enforcement_ of the constraint is **not**. 
+
 ### Coordination-avoiding data systems
+
+Observations: 
+1. "Dataflow systems can maintain integrity guarantees on derived data without atomic commit, linearizability, or synchronous cross-partition coordination."
+2. "Although strict uniqueness constraints require timeliness and coordination, many applications are actually fine with loose constraints that maybe temporarily violated and fixed up later, as long as integrity is preserved throughout."
+
+This means that dataflow systems cna work without requiring coordination, wile still giving strong integrity guarantees.
 
 ## Trust, but Verify 
 
