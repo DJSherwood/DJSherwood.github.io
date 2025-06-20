@@ -300,23 +300,48 @@ This means that dataflow systems cna work without requiring coordination, wile s
 
 ## Trust, but Verify 
 
+If you have enough devices, even very unlikely things happen.
+
 ### Maintaining integrity in the face of software bugs
+
+Assume there are bugs in your software.
 
 ### Don't just blindly trust what they promise
 
+Checking the integrity of data is called _auditing_.
+Important to try to restore from a backup from time to time!
+
 ### A culture of verification 
+
+We need more self-auditing systems.
+ACID led us to trust our hardware blindly, but now that we are moving to systems with weaker consistency, we should be more skeptical of hardware integrity.
 
 ### Designing for auditability 
 
+Logs do not explain why a transformation occurred. 
+Event-based systems provide better auditability.
+
 ### The end-to-end argument again
+
+Check the integrity of dataflow systems by going end to end.
 
 ### Tools for auditable data systems
 
+"It would be interesting to use cryptographic tools to prove the integrity of a system in a way that is robust to a wide range of hardware and software issues, and even potentially malicious actions."
+The idea of _proof of work_ is wasteful. 
+Cryptographic auditing and integrity checking often relies on _Merkle_ trees. 
+
 # Doing the Right Thing
+
+We must carefully consider those consequences and to consciously decide what kind of world we want to live in.
 
 ## Predictive Analytics
 
-### Bias and discrimination 
+The importance of quantifying uncertainty when generating predictions. 
+Basically skipping this section because it is all old hat. 
+Ha, 23andMe.
+
+### Bias and discrimination
 
 ### Responsibility and accountability 
 
