@@ -8,7 +8,7 @@ lead: "Computer Literate...proofs"
 
 **A decade ago**, when I was learning ```R```, I stumbled upon the ```.Rmarkdown``` file type and its use in (what was then) `RStudio`. 
 I was amazed! I could blend code with english, intertwining examples with analyses. 
-Well, it's a decade later and I no longer use ```R```. *But* I have since become interested in mathematical proving, and so I wanted to share with you a tool that does the *opposite* or ```.Rmarkdown```. 
+Well, it's a decade later and I no longer use ```R```.  However, I have since become interested in mathematical proving, and so I wanted to share with you a tool that does the *opposite* of ```.Rmarkdown```. 
 It takes human "readable" mathematical proofs and turns it into code.
 The language is called ```lean```. It's main utility is allowing for the *automatic* verification of proofs. 
 
@@ -46,8 +46,9 @@ rw [← four_eq_succ_three]           //4 = 4
 rfl
 ```
 
-Essentially, instead of breaking things down into **1**'s they actually added things up. 
-That does seem a bit more correct.
+Essentially, instead of breaking things down into **1**'s and adding, a more correct way is to express the **2**'s as **successors** and then add.
+
+Definitely more elegant. 
 Looking a little more closely at their solution I'm realizing that I didn't realize I could run several statements together. 
 Also, that little arrow seems to indicate a reversal of the definition. 
 Like, if ```h: X = Y``` then the arrow does ```Y = X```, I think. 
