@@ -53,4 +53,4 @@ Looking a little more closely at their solution I'm realizing that I didn't real
 Also, that little arrow seems to indicate a reversal of the definition. 
 Like, if ```h: X = Y``` then the arrow does ```Y = X```, I think. 
 
-Even though I have spoiled the "first" boss for you, I hope you still take some time and play with it yourself. 
+Even though I have spoiled the "first" boss for you, I hope you still take some time and investigate it on your own!
