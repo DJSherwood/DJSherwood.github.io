@@ -13,12 +13,12 @@ It takes human "readable" mathematical proofs and turns it into code.
 The language is called ```lean```. It's main utility is allowing for the *automatic* verification of proofs. 
 
 Before I demonstrate with an example, please visit [The Natural Number Game](https://adam.math.hhu.de/#/g/leanprover-community/nng4)
-for yourself and give it a try! 
+for yourself and give it a try.
 
 What follows is a spoiler for the "tutorial" world. 
 
 ## Tutorial World Boss
-The "boss" level challenge is to prove ```2 + 2 = 4```. I found this quite challenging! 
+The "boss" level challenge is to prove ```2 + 2 = 4```. I found this quite challenging.
 Here is my solution: 
 
 ```{lean}
