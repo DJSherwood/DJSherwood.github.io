@@ -49,7 +49,7 @@ rfl
 Essentially, instead of breaking things down into **1**'s and adding, a more correct way is to express the **2**'s as **successors** and then add.
 
 Definitely more elegant. 
-Looking a little more closely at their solution I'm realizing that I didn't realize I could run several statements together. 
+Looking a little more closely at their solution I'm realizing that I could have run several statements together. 
 Also, that little arrow seems to indicate a reversal of the definition. 
 Like, if ```h: X = Y``` then the arrow does ```Y = X```, I think. 
 
